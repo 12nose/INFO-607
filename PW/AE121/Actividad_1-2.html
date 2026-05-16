@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad de Evaluación 1.2 </title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --danger-color: #e74c3c;
+            --warning-color: #f1c40f;
+            --bg-color: #f4f6f8;
+            --text-color: #333333;
+            --border-color: #cbd5e1;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 4px solid var(--secondary-color);
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            background-color: #f8fafc;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+
+        h3 {
+            color: #475569;
+            margin-top: 30px;
+            font-size: 18px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        /* Tabla de Encabezado */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .info-table td {
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            vertical-align: top;
+        }
+
+        .label {
+            font-weight: bold;
+            background-color: #f1f5f9;
+            width: 22%;
+            color: var(--primary-color);
+        }
+
+        .team-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .team-list li {
+            margin-bottom: 4px;
+        }
+
+        .meta-data {
+            font-size: 15px;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        /* Bloques de información institucional */
+        .highlight-box {
+            background-color: #f0f7ff;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-size: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        /* Inputs y Cajas de Texto de Cuestionarios */
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 15.5px;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14.5px;
+            font-family: inherit;
+            background-color: #f8fafc;
+            color: #1e293b;
+            resize: vertical;
+            transition: all 0.25s ease;
+        }
+
+        textarea:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+        }
+
+        .sub-list {
+            padding-left: 20px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 25px;
+            margin-top: 15px;
+        }
+
+        /* ==========================================================
+           DISEÑO DE ORGANIZADORES GRÁFICOS Y MAPAS MENTALES (CSS)
+           ========================================================== */
+        
+        .graphic-organizer {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px 20px;
+            margin-top: 15px;
+            position: relative;
+        }
+
+        /* Mapa Radial / Conceptual con Nodos Conectados */
+        .map-root {
+            display: block;
+            max-width: 250px;
+            margin: 0 auto 40px auto;
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(44, 62, 80, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Conectores lógicos simulados mediante CSS Grid de Nodos */
+        .map-branches {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            position: relative;
+        }
+
+        /* Tarjetas de Nodos del Mapa Mental */
+        .map-node {
+            background: var(--white);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        .map-node:hover {
+            transform: translateY(-2px);
+        }
+
+        .map-node::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            width: 2px;
+            height: 15px;
+            background-color: var(--secondary-color);
+        }
+
+        .node-badge {
+            display: inline-block;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .badge-danger { background-color: #fde8e8; color: var(--danger-color); }
+        .badge-success { background-color: #def7ec; color: var(--accent-color); }
+        .badge-warning { background-color: #fef9c3; color: #b45309; }
+        .badge-info { background-color: #e1effe; color: var(--secondary-color); }
+
+        .node-title {
+            font-weight: bold;
+            font-size: 15.5px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .node-desc {
+            font-size: 13.5px;
+            color: #475569;
+            margin: 0;
+        }
+
+        /* Organizador de Columnas Paralelas / Comparativo */
+        .split-organizer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .column-panel {
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .panel-header {
+            padding: 12px 15px;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .panel-body {
+            padding: 20px;
+        }
+
+        .panel-item {
+            background-color: #f8fafc;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 12px;
+            font-size: 13.5px;
+            border-left: 3px solid var(--border-color);
+        }
+
+        .panel-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Organizador Gráfico de Línea de Prensa / Recortes */
+        .timeline-organizer {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .press-card {
+            background: #fffcf4;
+            border: 1px solid #fef3c7;
+            border-left: 5px solid var(--warning-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .press-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #718096;
+            font-weight: 700;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 6px;
+        }
+
+        .press-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #991b1b;
+            margin-bottom: 8px;
+        }
+
+        .press-body {
+            font-size: 14px;
+            color: #334155;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Botón de Impresión Integrado */
+        .btn-print {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 45px;
+            transition: background 0.2s ease, transform 0.1s;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-print:hover {
+            background-color: #1e293b;
+        }
+
+        .btn-print:active {
+            transform: scale(0.99);
+        }
+
+        /* Estilos de Impresión a Archivo Local o PDF */
+        @media print {
+            body { background: none; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .btn-print { display: none; }
+            .graphic-organizer { background-color: #ffffff !important; }
+            textarea, input[type="text"] { background-color: #ffffff !important; }
+        }
+
+                .btn-volver {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff1744;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .btn-volver:hover { transform: scale(1.05); background-color: #d50000; }
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Actividad de Evaluación 1.2</h1>
+
+    <table class="info-table">
+        <tr>
+            <td class="label">Nombre del Módulo:</td>
+            <td class="meta-data">Aplicación de la Normatividad Informática</td>
+            <td class="label">Nombre de los Alumnos:</td>
+            <td>
+                <ol class="team-list">
+                    <li>Rigo Adrián Dzib Pat</li>
+                    <li>Sandra Sarai Pat Itza</li>
+                    <li>Neivy Grisel Poot Cahum</li>
+                    <li>Estrella Abigail Un Couoh</li>
+                    <li>Zeidy Jhoselin Cano Canche</li>
+                    <li>María Guadalupe Xiu Uitzil</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">Docente Evaluador:</td>
+            <td class="meta-data">Carlos Daniel Ríos Rivera</td>
+            <td class="label">Grupo:</td>
+            <td class="meta-data">INFO 607</td>
+        </tr>
+        <tr>
+            <td class="label">Actividad de evaluación:</td>
+            <td class="meta-data">1.2</td>
+            <td class="label">Fecha:</td>
+            <td class="meta-data">15 / 05 / 2026</td>
+        </tr>
+    </table>
+
+    <div class="highlight-box">
+        <strong>Resultado de Aprendizaje:</strong> 1.2 Identifica el marco jurídico del derecho informático relativo al software y al equipo de cómputo, conforme a las leyes, normas y principios de la legislación informática en México.
+    </div>
+
+    <div class="highlight-box">
+        <strong>Propósito de la unidad:</strong> Describirá las bases jurídicas aplicables al derecho informático basado en las leyes, normas y principios establecidos en México para su aplicación en el uso de las Tecnologías de la Información.
+    </div>
+
+
+    <h2>I. Mapas Mentales y Evidencias Prácticas</h2>
+    
+    <div class="form-group">
+        <label>Punto 3: Realiza un mapa mental-conceptual en donde representes todos los delitos informáticos ya vistos en clase.</label>
+        
+        <div class="graphic-organizer">
+            <div class="map-root">Delitos Informáticos <br>(Código Penal Federal)</div>
+            
+            <div class="map-branches">
+                <div class="map-node" style="border-left: 4px solid var(--danger-color);">
+                    <span class="node-badge badge-danger">Acceso Ilícito</span>
+                    <div class="node-title">Hackeo e Intrusión</div>
+                    <p class="node-desc">Ingresar sin derecho ni autorización previa a sistemas, bases de datos o infraestructuras de red protegidas por mecanismos de seguridad.</p>
+                </div>
+                
+                <div class="map-node" style="border-left: 4px solid var(--danger-color);">
+                    <span class="node-badge badge-danger">Sabotaje Digital</span>
+                    <div class="node-title">Modificación o Destrucción</div>
+                    <p class="node-desc">Alterar, borrar, corromper o inutilizar archivos, códigos fuente o sistemas computacionales a través de malware, virus o ransomware.</p>
+                </div>
+                
+                <div class="map-node" style="border-left: 4px solid var(--danger-color);">
+                    <span class="node-badge badge-danger">Fraude Informático</span>
+                    <div class="node-title">Estafas y Phishing</div>
+                    <p class="node-desc">Manipular software o algoritmos, duplicar portales financieros y engañar usuarios para obtener lucros indebidos o desvíos monetarios.</p>
+                </div>
+                
+                <div class="map-node" style="border-left: 4px solid var(--danger-color);">
+                    <span class="node-badge badge-danger">Suplantación</span>
+                    <div class="node-title">Robo de Identidad Digital</div>
+                    <p class="node-desc">Apropiarse ilegalmente de datos biométricos, credenciales de acceso, firmas electrónicas o perfiles sociales para cometer actos ilícitos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Punto 4: Realiza un mapa mental de todos los beneficios, faltas administrativas aplicables al software (licencia de software).</label>
+        
+        <div class="graphic-organizer">
+            <div class="map-root" style="background-color: var(--secondary-color);">Licenciamiento de Software</div>
+            
+            <div class="split-organizer">
+                <div class="column-panel">
+                    <div class="panel-header" style="background-color: var(--accent-color);">Beneficios de Uso Legal</div>
+                    <div class="panel-body">
+                        <div class="panel-item" style="border-left-color: var(--accent-color);">
+                            <strong>Actualizaciones de Seguridad:</strong> Acceso inmediato a parches para prevenir vulnerabilidades y ataques cibernéticos.
+                        </div>
+                        <div class="panel-item" style="border-left-color: var(--accent-color);">
+                            <strong>Soporte Técnico:</strong> Asistencia especializada y directa por parte de los desarrolladores o fabricantes ante fallas del programa.
+                        </div>
+                        <div class="panel-item" style="border-left-color: var(--accent-color);">
+                            <strong>Garantía e Inmunidad:</strong> Mitigación total de riesgos económicos, demandas y multas durante auditorías de software corporativas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column-panel">
+                    <div class="panel-header" style="background-color: var(--danger-color);">Faltas Administrativas</div>
+                    <div class="panel-body">
+                        <div class="panel-item" style="border-left-color: var(--danger-color);">
+                            <strong>Uso sin Licencia:</strong> Instalar o reproducir paqueterías comerciales pirateadas, alteradas o que no tengan un soporte de compra válido.
+                        </div>
+                        <div class="panel-item" style="border-left-color: var(--danger-color);">
+                            <strong>Exceso de Copias:</strong> Duplicar o desplegar el software en un número superior de estaciones de trabajo al autorizado en el contrato.
+                        </div>
+                        <div class="panel-item" style="border-left-color: var(--danger-color);">
+                            <strong>Ingeniería Inversa:</strong> Modificar, descifrar, hackear o comercializar el código fuente original sin el consentimiento del autor.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Punto 5: Del periódico digital realiza recortes semanales en donde muestres delitos informáticos, normas y sanciones aplicadas en las nuevas tecnologías de la informática.</label>
+        
+        <div class="graphic-organizer">
+            <div class="timeline-organizer">
+                <div class="press-card">
+                    <div class="press-header">
+                        <span>Recorte Digital #1 • Diario de Circulación Nacional</span>
+                        <span>Sección: Policía Cibernética</span>
+                    </div>
+                    <div class="press-title">Investigan hackeo masivo a servidores gubernamentales por Acceso Ilícito</div>
+                    <p class="press-body">"La Fiscalía General de la República ha abierto una carpeta de investigación tras un ataque dirigido que vulneró las bases de datos centrales. Las autoridades persiguen el caso bajo las directrices del Código Penal Federal, buscando aplicar sanciones que conllevan severas penas de prisión."</p>
+                </div>
+
+                <div class="press-card">
+                    <div class="press-header">
+                        <span>Recorte Digital #2 • Tecno-Finanzas México</span>
+                        <span>Sección: Propiedad Industrial</span>
+                    </div>
+                    <div class="press-title">Multan a firma de ingeniería con miles de UMA por operar con software adulterado</div>
+                    <p class="press-body">"Durante una inspección sorpresa encabezada por reguladores de propiedad intelectual, se detectó el despliegue de paqueterías de diseño industrial sin licenciamiento original. El establecimiento fue acreedor a una falta administrativa severa que implicó la clausura temporal del sitio y multas económicas drásticas."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>II. Cuestionario sobre Licencias de Software</h2>
+
+    <div class="form-group">
+        <label>Que es una licencia de software:</label>
+        <textarea rows="3">Es un contrato o acuerdo estrictamente legal y regulatorio formalizado entre el autor o titular de los derechos patrimoniales de un programa de cómputo (licenciante) y el usuario final (licenciatario). En este instrumento jurídico se detallan de forma estricta las condiciones, permisos de uso, ámbitos espaciales, vigencia y restricciones bajo las cuales se autoriza la explotación de la obra informática.</textarea>
+    </div>
+
+    <h3>Describe los elementos de una licencia de software:</h3>
+    
+    <div class="sub-list">
+        <div class="form-group">
+            <label>a) Licenciante:</label>
+            <input type="text" value="Es la persona física o entidad moral que ostenta legítimamente los derechos de propiedad intelectual y de autor de la obra, facultada para autorizar o denegar su uso a terceros.">
+        </div>
+
+        <div class="form-group">
+            <label>b) Licenciatario:</label>
+            <input type="text" value="Es el cliente, usuario o corporación que adquiere el derecho de uso legítimo de la paquetería, quedando sujeto al cumplimiento obligatorio de las cláusulas del contrato.">
+        </div>
+
+        <div class="form-group">
+            <label>c) Plazo:</label>
+            <input type="text" value="Es el periodo de tiempo explícito en el que el acuerdo mantiene su validez jurídica. Determina si el permiso concedido es de carácter perpetuo o condicionado a suscripciones temporales.">
+        </div>
+
+        <div class="form-group">
+            <label>d) Precio / Contraprestación:</label>
+            <input type="text" value="Es la tarifa o importe financiero que el licenciatario debe sufragar para ejercer el uso comercial o privado del software. En modelos de código abierto o software libre, este valor puede ser de cero.">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Explica brevemente y con tus propias palabras el rol que puede ejercer un licenciante:</label>
+        <textarea rows="3">El licenciante opera como el dueño absoluto y la máxima autoridad legal del software. Su rol esencial es fijar los límites y candados de su creación: define el esquema de precios, prohíbe la reproducción o copia no autorizada, resguarda el secreto de su código fuente mediante cifrados y conserva el poder legal para suspender o rescindir los accesos al programa si el usuario infringe los términos acordados.</textarea>
+    </div>
+
+
+    <h2>III. Normativas Aplicadas al Equipo de Cómputo</h2>
+    <p style="font-size: 14.5px; color:#475569; margin-bottom: 20px;">Contesta las normativas aplicadas al equipo de cómputo en los casos siguientes:</p>
+
+    <div class="sub-list">
+        <div class="form-group">
+            <label>• De la responsabilidad:</label>
+            <textarea rows="3">Cada colaborador o alumno se constituye como el depositario legal y único responsable del cuidado del hardware asignado. Se prohíbe terminantemente ceder la custodia a personal ajeno, modificar físicamente los componentes de la máquina o compartir los perfiles e identidades de acceso institucional.</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>• Del respaldo, ambiente y limpieza:</label>
+            <textarea rows="3">Es obligación del usuario mantener la estación de trabajo en condiciones higiénicas óptimas, evitando el consumo de sustancias líquidas o alimentos sobre los teclados o componentes del equipo. Asimismo, se ordena realizar respaldos de información periódicos en los servidores de la nube autorizados.</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>• Servicios Institucionales:</label>
+            <textarea rows="3">El uso de las redes locales, la navegación por internet y las cuentas de correo electrónico corporativas se restringen únicamente al desahogo de actividades académicas o laborales. Queda estrictamente vedado el uso de la infraestructura para descargas masivas de entretenimiento o minería de datos ajena.</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>• Adquisiciones de equipo de cómputo y suministros:</label>
+            <textarea rows="3">Toda compra, adquisición o reemplazo de equipos informáticos, periféricos o consumibles técnicos debe canalizarse mediante el Departamento de Sistemas y TI, asegurando de esta forma la compatibilidad de las piezas con la infraestructura central y la vigencia en los registros de licencias.</textarea>
+        </div>
+    </div>
+
+
+    <h2>IV. Riesgos, Problemáticas y Medidas de Seguridad</h2>
+
+    <div class="sub-list">
+        <div class="form-group">
+            <label>• Riesgos para las empresas:</label>
+            <textarea rows="3">Filtración masiva de secretos industriales o ventajas de mercado ante competidores, secuestro operativo completo del negocio por infecciones dirigidas de Ransomware, demandas y sanciones multimillonarias por vulneración de la privacidad de clientes y quiebra total de la reputación corporativa.</textarea>
+        </div>
+
+        <div class="form-group">
+            <label>• Riesgos para los usuarios:</label>
+            <textarea rows="3">Suplantación de identidad para la contratación ilícita de créditos financieros, vaciado y desvío de capitales en cuentas bancarias, extorsiones a través del uso no consentido de fotografías o información privada y la pérdida total e irreversible de archivos profesionales o de vida.</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Menciona algunas medidas para evitar el acceso no autorizado a los equipos de cómputo:</label>
+        <textarea rows="4">1. Estructuración de contraseñas robustas (combinando letras mayúsculas, minúsculas, números y símbolos) con renovación obligatoria cada determinado periodo.
+2. Despliegue mandatorio de sistemas de autenticación de doble factor (2FA).
+3. Uso continuo de Firewalls, VPNs cifradas y paqueterías de antivirus empresariales con detección en tiempo real.
+4. Implementar el bloqueo automático inmediato del sistema operativo cuando la estación quede sin supervisión física.</textarea>
+    </div>
+
+
+    <h2>V. Legislación Penal Aplicada</h2>
+    
+    <div class="form-group">
+        <label>Describe brevemente el contenido de los artículos 367 al 370 del Código Penal Federal relativo al Robo de equipo</label>
+        <textarea rows="4">Estos artículos del Código Penal Federal tipifican, definen y regulan el delito de robo, entendiéndolo como el acto de apoderamiento de un bien mueble ajeno (tal como laptops, servidores, computadoras o cableado de telecomunicaciones) sin derecho y sin el consentimiento de su legítimo propietario. La ley impone penalizaciones drásticas de prisión efectiva y sanciones económicas cuya magnitud se calcula de manera proporcional al valor comercial del equipo sustraído, medido en Unidades de Medida y Actualización (UMA) vigentes.</textarea>
+    </div>
+
+
+    <h2>VI. Estructuración Teórica Final</h2>
+    
+    <div class="form-group">
+        <label>Realiza un mapa mental-conceptual en donde la idea principal sea “Autoría y creación de Software” especifiques lo siguiente:</label>
+        
+        <div class="graphic-organizer" style="background-color: #f1f5f9;">
+            <div class="map-root" style="background-color: #1e293b; max-width: 280px;">Autoría y Creación de Software</div>
+            
+            <div class="map-branches">
+                <div class="map-node" style="border-top: 4px solid var(--secondary-color);">
+                    <span class="node-badge badge-info">Propiedad Intelectual</span>
+                    <div class="node-title">Derechos de Autor (INDAUTOR)</div>
+                    <p class="node-desc">Constituye el pilar de protección en México. El código fuente y el código objeto de un desarrollo informático son catalogados e inscritos como obras literarias, protegiendo tanto los derechos morales como patrimoniales de los creadores.</p>
+                </div>
+                
+                <div class="map-node" style="border-top: 4px solid var(--secondary-color);">
+                    <span class="node-badge badge-info">Propiedad Industrial</span>
+                    <div class="node-title">Marcas y Patentes (IMPI)</div>
+                    <p class="node-desc">El software como elemento aislado no puede ser sujeto a patentes en el marco mexicano. Sin embargo, se protegen ante el IMPI los nombres comerciales del programa, logotipos o invenciones industriales mecánicas que dependan del código para operar.</p>
+                </div>
+                
+                <div class="map-node" style="border-top: 4px solid var(--secondary-color);">
+                    <span class="node-badge badge-info">Trámite de Solicitud</span>
+                    <div class="node-title">Requisitos Formales de Registro</div>
+                    <p class="node-desc">Llenar debidamente la solicitud oficial (Formato RPDA-01), realizar el pago de derechos fiscales, identificación del desarrollador y adjuntar de manera física o digital (CD/USB) los fragmentos iniciales y finales que dejen constancia del código fuente original.</p>
+                </div>
+                
+                <div class="map-node" style="border-top: 4px solid var(--secondary-color);">
+                    <span class="node-badge badge-info">Contratos Legales</span>
+                    <div class="node-title">Modelos de Licenciamiento</div>
+                    <p class="node-desc">Mecanismos legales que estructuran la distribución. Incluye acuerdos de usuario final (EULA), cesiones patrimoniales completas de código, contratos de desarrollo de software bajo demanda o licencias SaaS de servicios en entornos de nube.</p>
+                </div>
+
+                <div class="map-node" style="grid-column: span 2; border-top: 4px solid var(--accent-color); text-align: center; max-width: 600px; margin: 0 auto;">
+                    <span class="node-badge badge-success">Modelos de Software</span>
+                    <div class="node-title">Naturaleza Comercial y de Distribución</div>
+                    <p class="node-desc" style="text-align: left; max-width: 500px; margin: 0 auto;">
+                        <strong>• Software Privado:</strong> Distribuciones de código fuente totalmente restringido y cerrado. Su uso exige la compra obligatoria de derechos y prohíbe copias o modificaciones ajenas al autor.<br><br>
+                        <strong>• Software Público / Libre:</strong> Obras tecnológicas liberadas bajo licencias abiertas (como GPL o MIT). Permiten e incentivan el acceso al código fuente para su libre estudio, modificación, mejora técnica y redistribución masiva.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn-print" onclick="window.print()">Guardar Actividad como PDF / Imprimir Evaluación</button>
+</div>
+<a href="../Menu.html" class="btn-volver">Ir al Menú Principal</a>
+</body>
+</html>
