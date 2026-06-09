@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de Funciones y Equipos</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+header{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    margin-bottom:10px;
+}
+
+.banner{
+    width:100%;
+    height:400px;
+    background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80');
+    background-size:cover;
+    background-position:center;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.section-title{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:25px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    background:#f0f0f0;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    color:#1565c0;
+    margin-bottom:10px;
+}
+
+.card p{
+    text-align:justify;
+    line-height:1.6;
+}
+
+.software-section{
+    margin-top:50px;
+}
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+        .btn-volver {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff1744;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .btn-volver:hover { transform: scale(1.05); background-color: #d50000; }
+
+</style>
+</head>
+<body>
+
+<header id="inicio">
+    <h1>Auditoría de Funciones y Equipos Sujetos a Revisión</h1>
+    <p>Evaluación de procesos tecnológicos y activos informáticos</p>
+</header>
+
+<div class="banner"></div>
+
+<div class="container">
+
+    <h2 class="section-title" id="funciones">Funciones Auditadas</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Arrendamiento de equipos"
+                onerror="this.src='https://picsum.photos/800/400';">
+            <div class="card-content">
+                <h3>Arrendamiento de Equipo Informático</h3>
+                <p>
+                    Se revisan los contratos de leasing para verificar que los equipos
+                    arrendados cumplan con los tiempos de vida útil establecidos y que
+                    las cláusulas de renovación o devolución sean favorables para la empresa.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Mantenimiento informático"
+                onerror="this.src='https://picsum.photos/801/400';">
+            <div class="card-content">
+                <h3>Mantenimiento Preventivo y Correctivo</h3>
+                <p>
+                    Se evalúan las bitácoras de servicio para comprobar que se realicen
+                    limpiezas, actualizaciones y revisiones programadas, reduciendo el
+                    riesgo de fallas y paros técnicos.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Redes y comunicaciones"
+                onerror="this.src='https://picsum.photos/802/400';">
+            <div class="card-content">
+                <h3>Equipos y Aparatos de Comunicación</h3>
+                <p>
+                    Se realiza una revisión física y lógica de módems, repetidores,
+                    routers y sistemas de telefonía IP para asegurar una conectividad
+                    estable y continua.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Contratación tecnológica"
+                onerror="this.src='https://picsum.photos/803/400';">
+            <div class="card-content">
+                <h3>Adquisición y Contratación</h3>
+                <p>
+                    Se auditan los procesos de compra verificando la comparación de
+                    proveedores y la justificación técnica que respalde la selección
+                    de software o hardware.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="software-section">
+        <h2 class="section-title" id="equipos">Equipos y Software</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800"
+                alt="Equipo de cómputo"
+                onerror="this.src='https://picsum.photos/804/400';">
+                <div class="card-content">
+                    <h3>Equipo de Cómputo</h3>
+                    <p>
+                        Inventario de servidores, laptops y estaciones de trabajo,
+                        verificando su estado físico, capacidad operativa y vigencia.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=800&q=80">
+                <div class="card-content">
+                    <h3>Telecomunicaciones</h3>
+                    <p>
+                        Evaluación del estado de racks, switches, cableado estructurado
+                        y dispositivos de red para garantizar la disponibilidad de los servicios.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80">
+                <div class="card-content">
+                    <h3>Software</h3>
+                    <p>
+                        Verificación de licencias originales, cumplimiento normativo y
+                        disponibilidad de soporte técnico para evitar sanciones legales.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    Auditoría Tecnológica Empresarial © 2026
+</footer>
+
+<a href="../Menu.html" class="btn-volver">Ir al Menú</a>
+
+</body>
+</html>

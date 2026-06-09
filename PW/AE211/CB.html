@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Políticas de Uso y Seguridad Física</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.8;
+}
+
+header{
+    background:linear-gradient(135deg,#003366,#0056b3);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:1.1rem;
+}
+
+.banner{
+    height:400px;
+    background:url('https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size:cover;
+    background-position:center;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:50px 0;
+}
+
+.section-title{
+    text-align:center;
+    color:#003366;
+    margin-bottom:50px;
+    font-size:2rem;
+    position:relative;
+}
+
+.section-title::after{
+    content:"";
+    width:100px;
+    height:4px;
+    background:#0056b3;
+    display:block;
+    margin:10px auto;
+    border-radius:5px;
+}
+
+.bloque{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    margin-bottom:70px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.bloque.inverso{
+    flex-direction:row-reverse;
+}
+
+.imagen{
+    flex:1;
+}
+
+.imagen img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+}
+
+.texto{
+    flex:1;
+    padding:30px;
+}
+
+.texto h2{
+    color:#0056b3;
+    margin-bottom:10px;
+}
+
+.texto h4{
+    color:#666;
+    margin-bottom:15px;
+    font-weight:normal;
+}
+
+.texto p{
+    text-align:justify;
+}
+
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .bloque,
+    .bloque.inverso{
+        flex-direction:column;
+    }
+
+    .imagen img{
+        height:250px;
+    }
+
+}
+
+.btn-volver {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff1744;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .btn-volver:hover { transform: scale(1.05); background-color: #d50000; }
+
+</style>
+</head>
+<body>
+
+<header id="inicio">
+    <h1>Políticas de Uso de Equipos de Cómputo y Seguridad Física</h1>
+    <p>Normas y controles para la protección de los recursos tecnológicos y del centro de datos.</p>
+</header>
+
+<div class="banner"></div>
+
+<div class="container">
+
+    <h1 class="section-title" id="politicas">
+        Políticas de Uso de Equipos de Cómputo
+    </h1>
+
+    <!-- Asignación de bienes -->
+
+    <section class="bloque">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Asignación de equipos">
+        </div>
+
+        <div class="texto">
+            <h2>Asignación de Bienes</h2>
+            <h4>Control y responsabilidad de los activos tecnológicos</h4>
+
+            <p>
+                Todo equipo de cómputo debe entregarse mediante un resguardo firmado,
+                en el que se especifiquen las características del equipo, número de serie,
+                fecha de entrega y usuario responsable.
+                La finalidad de este procedimiento es mantener un control adecuado del
+                inventario tecnológico y garantizar la rendición de cuentas.
+                Además, se recomienda realizar revisiones periódicas para verificar que
+                los equipos se encuentren en buenas condiciones físicas y operativas.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Garantías -->
+
+    <section class="bloque inverso">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Garantías">
+        </div>
+
+        <div class="texto">
+            <h2>Garantías y Soporte Técnico</h2>
+            <h4>Protección de la inversión tecnológica</h4>
+
+            <p>
+                Es indispensable conservar en formato digital las facturas,
+                pólizas de garantía y documentación técnica de cada equipo.
+                Esto facilita la gestión de reparaciones, cambios de componentes
+                y reclamaciones con fabricantes o proveedores sin costos adicionales.
+                Asimismo, llevar un control de fechas de vencimiento permite planificar
+                renovaciones oportunas y mantener la continuidad operativa.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Uso adecuado -->
+
+    <section class="bloque">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Uso adecuado">
+        </div>
+
+        <div class="texto">
+            <h2>Uso Adecuado del Equipo</h2>
+            <h4>Buenas prácticas de utilización</h4>
+
+            <p>
+                Los equipos de cómputo deben utilizarse exclusivamente para actividades
+                relacionadas con las funciones de la organización.
+                Está prohibida la instalación de software sin autorización,
+                la alteración de configuraciones críticas y cualquier acción que
+                comprometa la seguridad informática.
+                El cumplimiento de estas políticas ayuda a prevenir infecciones por malware,
+                pérdida de información y vulnerabilidades de seguridad.
+            </p>
+        </div>
+
+    </section>
+
+    <h1 class="section-title" id="site">
+        Seguridad Física del Site (Centro de Datos)
+    </h1>
+
+    <!-- Acceso -->
+
+    <section class="bloque inverso">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Control de acceso">
+        </div>
+
+        <div class="texto">
+            <h2>Control de Acceso</h2>
+            <h4>Acceso restringido al personal autorizado</h4>
+
+            <p>
+                El ingreso al centro de datos debe limitarse únicamente a personal
+                autorizado mediante el uso de tarjetas magnéticas, sistemas biométricos
+                o registros electrónicos.
+                Estas medidas permiten mantener un historial de accesos,
+                prevenir intrusiones y proteger los activos críticos de la organización.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Energía -->
+
+    <section class="bloque">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Suministro de energía">
+        </div>
+
+        <div class="texto">
+            <h2>Suministro de Energía</h2>
+            <h4>Continuidad operativa y protección eléctrica</h4>
+
+            <p>
+                Los equipos tecnológicos deben estar protegidos mediante reguladores
+                de voltaje, UPS y plantas eléctricas de emergencia.
+                Estos dispositivos reducen el riesgo de daños provocados por variaciones
+                de energía y permiten que los servicios continúen funcionando durante
+                cortes eléctricos inesperados.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Clima -->
+
+    <section class="bloque inverso">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/159358/server-room-network-servers-159358.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Climatización">
+        </div>
+
+        <div class="texto">
+            <h2>Climatización y Control Ambiental</h2>
+            <h4>Condiciones óptimas para la infraestructura tecnológica</h4>
+
+            <p>
+                El centro de datos debe mantenerse entre 18°C y 24°C y una humedad
+                relativa entre 40% y 55%.
+                Estas condiciones ayudan a evitar sobrecalentamientos,
+                acumulación de electricidad estática y condensación,
+                prolongando la vida útil de los servidores y dispositivos de red.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Incendios -->
+
+    <section class="bloque">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Detección de incendios">
+        </div>
+
+        <div class="texto">
+            <h2>Detección y Prevención de Incendios</h2>
+            <h4>Protección de equipos e instalaciones</h4>
+
+            <p>
+                Los sistemas de detección temprana de humo permiten actuar rápidamente
+                ante una emergencia.
+                Se recomienda el uso de extintores de agente limpio como CO₂ o FM-200,
+                ya que extinguen el fuego sin causar daños a los componentes electrónicos.
+                También es conveniente realizar simulacros periódicos y capacitar al personal.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Respaldos -->
+
+    <section class="bloque inverso">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Respaldos">
+        </div>
+
+        <div class="texto">
+            <h2>Respaldo de Información</h2>
+            <h4>Protección de los datos institucionales</h4>
+
+            <p>
+                La información es uno de los activos más importantes de cualquier organización.
+                Por ello, deben implementarse copias de seguridad periódicas en medios locales
+                y externos, garantizando la recuperación de datos ante fallos, ataques o desastres.
+                Las pruebas de restauración deben realizarse regularmente para verificar la
+                integridad de los respaldos.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Videovigilancia -->
+
+    <section class="bloque">
+
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/3205570/pexels-photo-3205570.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Videovigilancia">
+        </div>
+
+        <div class="texto">
+            <h2>Videovigilancia</h2>
+            <h4>Monitoreo permanente de áreas críticas</h4>
+
+            <p>
+                Los sistemas de videovigilancia permiten supervisar el acceso a las
+                instalaciones, detectar incidentes y conservar evidencia para auditorías
+                o investigaciones.
+                Las grabaciones deben almacenarse de forma segura y mantenerse durante
+                el periodo establecido por las políticas de la organización.
+            </p>
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    Auditoría Informática • Políticas de Uso y Seguridad Física © 2026
+</footer>
+
+<a href="../Menu.html" class="btn-volver">Ir al Menú</a>
+
+</body>
+</html>

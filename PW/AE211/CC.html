@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normatividad y Políticas de Redes LAN</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f7fa;
+color:#333;
+line-height:1.8;
+}
+
+header{
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+color:white;
+text-align:center;
+padding:50px 20px;
+}
+
+header h1{
+font-size:2.7rem;
+margin-bottom:10px;
+}
+
+.banner{
+height:420px;
+background:url('https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1600');
+background-size:cover;
+background-position:center;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:50px 0;
+}
+
+.intro{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+margin-bottom:50px;
+}
+
+.intro h2{
+color:#1e3a8a;
+margin-bottom:15px;
+}
+
+.bloque{
+display:flex;
+gap:30px;
+margin-bottom:40px;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.bloque img{
+width:350px;
+object-fit:cover;
+}
+
+.info{
+padding:25px;
+}
+
+.info h2{
+color:#1e3a8a;
+margin-bottom:10px;
+}
+
+.norma{
+background:#dbeafe;
+border-left:6px solid #2563eb;
+padding:20px;
+margin-top:15px;
+border-radius:8px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h3{
+color:#1e3a8a;
+margin-bottom:15px;
+}
+
+.resumen{
+background:#1e3a8a;
+color:white;
+padding:40px;
+border-radius:20px;
+margin-top:50px;
+}
+
+.resumen h2{
+margin-bottom:15px;
+}
+
+footer{
+margin-top:50px;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+@media(max-width:900px){
+
+.bloque{
+flex-direction:column;
+}
+
+.bloque img{
+width:100%;
+height:250px;
+}
+
+}
+
+.btn-volver {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff1744;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .btn-volver:hover { transform: scale(1.05); background-color: #d50000; }
+        
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Normatividad y Políticas de Redes LAN</h1>
+<p>Lineamientos para garantizar una infraestructura de red segura, eficiente y documentada.</p>
+</header>
+
+<div class="banner"></div>
+
+<div class="container">
+
+<div class="intro">
+
+<h2>Importancia de la Normatividad en Redes LAN</h2>
+
+<p>
+Las redes de área local (LAN) constituyen la base de comunicación de una organización.
+Para asegurar un funcionamiento eficiente, es necesario aplicar estándares internacionales,
+mantener documentación actualizada y establecer políticas que regulen el uso de los recursos
+de red. Estas medidas permiten mejorar el rendimiento, reducir fallas y fortalecer la seguridad
+de la información.
+</p>
+
+</div>
+
+<!-- Cableado -->
+
+<div class="bloque">
+
+<img src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800">
+
+<div class="info">
+
+<h2>Sistema de Cableado Estructurado</h2>
+
+<p>
+El cableado estructurado debe diseñarse e instalarse siguiendo normas internacionales
+como ANSI/TIA-568 para garantizar la compatibilidad y calidad de las comunicaciones.
+Todos los cables deben estar correctamente identificados, organizados en paneles de parcheo
+y protegidos contra daños físicos.
+</p>
+
+<p>
+Las distancias máximas recomendadas para cableado de cobre son de 90 metros por enlace,
+mientras que la fibra óptica debe utilizarse en enlaces de mayor longitud o donde se requiera
+mayor velocidad y resistencia a interferencias electromagnéticas.
+</p>
+
+<div class="norma">
+<b>Norma Aplicable:</b> ANSI/TIA-568 para diseño, instalación y certificación de cableado estructurado.
+</div>
+
+</div>
+
+</div>
+
+<!-- Equipos -->
+
+<div class="bloque">
+
+<img src="https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=800">
+
+<div class="info">
+
+<h2>Manejo de Equipos de Comunicación</h2>
+
+<p>
+Los switches, routers y puntos de acceso deben ser administrados exclusivamente por personal autorizado.
+La conexión de dispositivos personales o equipos no registrados está prohibida, ya que puede generar
+conflictos de direccionamiento, bucles de red y vulnerabilidades de seguridad.
+</p>
+
+<p>
+También se recomienda implementar mecanismos como seguridad de puertos (Port Security),
+control de acceso mediante VLAN y monitoreo constante de los dispositivos de red.
+</p>
+
+</div>
+
+</div>
+
+<!-- UPS -->
+
+<div class="bloque">
+
+<img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800">
+
+<div class="info">
+
+<h2>Uso de UPS (No-Break)</h2>
+
+<p>
+Los equipos críticos de la red deben conectarse a Sistemas de Alimentación Ininterrumpida (UPS)
+para protegerlos contra apagones, fluctuaciones de voltaje y fallas eléctricas.
+</p>
+
+<p>
+El uso de UPS permite mantener los servicios operativos durante un tiempo limitado,
+suficiente para realizar respaldos y apagados controlados de servidores y dispositivos de comunicación.
+</p>
+
+</div>
+
+</div>
+
+<!-- Memoria Técnica -->
+
+<h2 style="text-align:center;color:#1e3a8a;margin-bottom:30px;">
+Memoria Técnica de la Red
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Topología de Red</h3>
+<p>
+Debe incluir diagramas actualizados que representen la estructura física y lógica de la red,
+permitiendo identificar enlaces, equipos y segmentos de comunicación.
+</p>
+</div>
+
+<div class="card">
+<h3>Ubicación de Nodos</h3>
+<p>
+Se deben documentar todos los puntos de red mediante planos que indiquen su ubicación,
+identificación y área de servicio.
+</p>
+</div>
+
+<div class="card">
+<h3>Direccionamiento IP</h3>
+<p>
+La documentación debe contener tablas con direcciones IP, máscaras de subred,
+puertas de enlace y asignación de dispositivos.
+</p>
+</div>
+
+<div class="card">
+<h3>Certificación de Enlaces</h3>
+<p>
+Cada punto de red debe contar con pruebas de certificación que validen el cumplimiento
+de los estándares de transmisión y calidad.
+</p>
+</div>
+
+<div class="card">
+<h3>Control de Cambios</h3>
+<p>
+Toda modificación realizada en la infraestructura debe registrarse indicando fecha,
+responsable y motivo del cambio.
+</p>
+</div>
+
+<div class="card">
+<h3>Inventario de Equipos</h3>
+<p>
+La memoria técnica debe incluir información detallada sobre switches, routers,
+servidores y demás dispositivos instalados en la red.
+</p>
+</div>
+
+</div>
+
+<div class="resumen">
+
+<h2>Resumen Operativo</h2>
+
+<p>
+Una red LAN eficiente requiere mucho más que equipos de comunicación modernos.
+Es indispensable contar con cableado estructurado certificado, políticas claras para el uso de
+equipos de red, sistemas de respaldo eléctrico y una memoria técnica permanentemente actualizada.
+La documentación adecuada permite simplificar tareas de mantenimiento, resolver incidentes con
+mayor rapidez y garantizar la continuidad de los servicios tecnológicos de la organización.
+</p>
+
+<p>
+Asimismo, la implementación de controles de seguridad, monitoreo constante y procedimientos
+de gestión de cambios fortalece la estabilidad de la infraestructura y reduce los riesgos
+operativos asociados a la administración de redes.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+Auditoría Informática • Normatividad y Políticas de Redes LAN © 2026
+</footer>
+
+<a href="../Menu.html" class="btn-volver">Ir al Menú</a>
+
+</body>
+</html>
